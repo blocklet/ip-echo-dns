@@ -8,6 +8,11 @@ const env = require('./libs/env');
 const { server } = require('./functions/app');
 const { start: startDNS } = require('./libs/dns');
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+if (isDevelopment && process.env.ABT_NODE) {
+  process.env.BLOCKLET_PORT = 3030;
+}
+
 const port = parseInt(process.env.BLOCKLET_PORT, 10) || 3000;
 
 startDNS();

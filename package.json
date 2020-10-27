@@ -134,7 +134,10 @@
         "port": 53,
         "upstreamPort": 5533
       }
-    ]
+    ],
+    "scripts": {
+      "dev": "npm run start"
+    }
   },
   "license": "Apache-2.0"
 }
