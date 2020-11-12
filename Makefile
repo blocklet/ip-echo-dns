@@ -10,9 +10,16 @@ build: init
 init: install dep setenv
 	@echo "Initializing the repo..."
 
+github-action-init: install dep setenv
+	@echo "Initializing the repo..."
+
 install:
 	@echo "Install software required for this repo..."
 	@npm install -g yarn @abtnode/cli
+
+github-action-install:
+	@echo "Install software required for this repo..."
+	@sudo npm install -g @abtnode/cli
 
 dep:
 	@echo "Install dependencies required for this repo..."

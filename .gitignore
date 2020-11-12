@@ -16,3 +16,5 @@ _blocklet/
 *.log
 coverage
 _test
+
+.blocklet
