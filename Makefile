@@ -15,6 +15,7 @@ github-action-init: install dep setenv
 
 install:
 	@echo "Install software required for this repo..."
+	@sudo npm install -g @abtnode/cli
 
 github-action-install:
 	@echo "Install software required for this repo..."

@@ -7,9 +7,6 @@
     "dapp",
     "dns"
   ],
-  "publishConfig": {
-    "directory": "_blocklet/"
-  },
   "files": [
     "api/",
     "build",
@@ -58,18 +55,16 @@
     "lint": "eslint src api",
     "precommit": "yarn lint",
     "prepush": "yarn lint",
-    "clean": "rm -rf build api/dist",
+    "clean": "rm -rf build api/dist .blocklet",
     "start": "npm-run-all --parallel start:*",
     "start:client": "NODE_ENV=development PUBLIC_URL=\"\" react-app-rewired start",
     "start:server": "NODE_ENV=development nodemon api/index.js -w api",
     "build": "yarn clean && npm-run-all build:*",
     "build:client": "PUBLIC_URL=\"/z8iZuGaHf4BxN4XxFWhjuX1zP99ySPmZUFNJf\" react-app-rewired build",
     "build:server": "netlify-lambda build api/functions",
-    "bundle": "yarn clean && npm-run-all bundle:*",
+    "bundle": "yarn clean && npm run bundle:client && rm -f build/**/**/*.map && npm run bundle:server",
     "bundle:client": "REACT_APP_API_PREFIX=\"\" REACT_APP_APP_NAME=\"IP Echo DNS\" yarn build:client",
-    "bundle:server": "NODE_ENV=production abtnode bundle -w api/webpack.blocklet.js",
-    "bundle-server": "DEBUG=@abtnode/* NODE_ENV=development abtnode bundle -w api/webpack.blocklet.js",
-    "prepublishOnly": "npm run bundle && rm -f _blocklet/build/**/**/*.js.map",
+    "bundle:server": "abtnode bundle -w api/webpack.blocklet.js",
     "test": "react-app-rewired test --env=jsdom --passWithNoTests",
     "eject": "react-app-rewired eject"
   },
