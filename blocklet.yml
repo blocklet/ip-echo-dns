@@ -44,8 +44,9 @@ interfaces:
     path: /
     prefix: '*'
   - type: service
-    name: udp
+    name: dns
     prefix: '*'
+    protocol: 'udp'
     port:
       internal: BLOCKLET_DNS_PORT
       external: 53
