@@ -17,8 +17,7 @@ author:
   url: 'http://github.com/polunzh'
 repository:
   type: git
-  url: >-
-    https://github.com/ArcBlock/abt-node/tree/master/blocklets/arcblock-simple-dns
+  url: https://github.com/blocklet/ip-echo-dns
 license: Apache-2.0
 group: dapp
 main: api/index.js
@@ -39,7 +38,7 @@ did: z8iZuGaHf4BxN4XxFWhjuX1zP99ySPmZUFNJf
 documentation: ''
 homepage: ''
 interfaces:
-  - type: gui
+  - type: web
     name: adminUrl
     path: /
     prefix: '*'
