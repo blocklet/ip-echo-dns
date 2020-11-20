@@ -9,7 +9,6 @@ files:
   - build
   - logo.png
   - blocklet.md
-  - blocklet.js
   - README.md
 author:
   name: polunzh
@@ -17,8 +16,7 @@ author:
   url: 'http://github.com/polunzh'
 repository:
   type: git
-  url: >-
-    https://github.com/ArcBlock/abt-node/tree/master/blocklets/arcblock-simple-dns
+  url: https://github.com/blocklet/ip-echo-dns
 license: Apache-2.0
 group: dapp
 main: api/index.js
@@ -32,7 +30,6 @@ environments:
     default: '(\d{1,3})-(\d{1,3})-(\d{1,3})-(\d{1,3})\.ip\.abtnet\.io'
     secure: false
 scripts:
-  preDeploy: npm run bundle
   dev: npm run start
 specVersion: 1.0.1
 did: z8iZuGaHf4BxN4XxFWhjuX1zP99ySPmZUFNJf

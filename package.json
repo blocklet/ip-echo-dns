@@ -7,15 +7,6 @@
     "dapp",
     "dns"
   ],
-  "files": [
-    "api/",
-    "build",
-    "screenshots",
-    "logo.png",
-    "blocklet.md",
-    "blocklet.js",
-    "README.md"
-  ],
   "author": "polunzh <polunzh@gmail.com> (http://github.com/polunzh)",
   "repository": {
     "type": "git",
@@ -59,12 +50,10 @@
     "start": "npm-run-all --parallel start:*",
     "start:client": "NODE_ENV=development PUBLIC_URL=\"\" react-app-rewired start",
     "start:server": "NODE_ENV=development nodemon api/index.js -w api",
-    "build": "yarn clean && npm-run-all build:*",
     "build:client": "PUBLIC_URL=\"/z8iZuGaHf4BxN4XxFWhjuX1zP99ySPmZUFNJf\" react-app-rewired build",
-    "build:server": "netlify-lambda build api/functions",
     "bundle": "yarn clean && npm run bundle:client && rm -f build/**/**/*.map && npm run bundle:server",
     "bundle:client": "REACT_APP_API_PREFIX=\"\" REACT_APP_APP_NAME=\"IP Echo DNS\" yarn build:client",
-    "bundle:server": "an bundle -w api/webpack.blocklet.js --create-release",
+    "bundle:server": "an bundle --zip --create-release",
     "deploy": "npm run bundle && an deploy .blocklet/bundle --skip-hooks",
     "test": "react-app-rewired test --env=jsdom --passWithNoTests",
     "eject": "react-app-rewired eject"
