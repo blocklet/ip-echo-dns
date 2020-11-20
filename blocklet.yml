@@ -40,7 +40,7 @@ documentation: ''
 homepage: ''
 interfaces:
   - type: gui
-    name: admin_url
+    name: adminUrl
     path: /
     prefix: '*'
   - type: service
