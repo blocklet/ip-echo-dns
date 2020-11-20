@@ -39,7 +39,7 @@ did: z8iZuGaHf4BxN4XxFWhjuX1zP99ySPmZUFNJf
 documentation: ''
 homepage: ''
 interfaces:
-  - type: gui
+  - type: web
     name: adminUrl
     path: /
     prefix: '*'

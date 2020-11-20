@@ -64,8 +64,8 @@
     "build:server": "netlify-lambda build api/functions",
     "bundle": "yarn clean && npm run bundle:client && rm -f build/**/**/*.map && npm run bundle:server",
     "bundle:client": "REACT_APP_API_PREFIX=\"\" REACT_APP_APP_NAME=\"IP Echo DNS\" yarn build:client",
-    "bundle:server": "an bundle -w api/webpack.blocklet.js",
-    "deploy": "npm run bundle && an deploy .blocklet/bundle",
+    "bundle:server": "an bundle -w api/webpack.blocklet.js --create-release",
+    "deploy": "npm run bundle && an deploy .blocklet/bundle --skip-hooks",
     "test": "react-app-rewired test --env=jsdom --passWithNoTests",
     "eject": "react-app-rewired eject"
   },
