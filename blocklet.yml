@@ -1,7 +1,7 @@
 name: ip-echo-dns
 title: IP Echo DNS
 description: An IP Echo DNS server
-version: 1.2.0
+version: 1.3.0
 keywords:
   - dapp
   - dns
@@ -39,6 +39,9 @@ interfaces:
   - type: web
     name: adminUrl
     path: /
+    prefix: '*'
+    protocol: tcp
+    port: BLOCKLET_PORT
   - type: service
     name: dns
     protocol: udp
@@ -46,6 +49,9 @@ interfaces:
       internal: BLOCKLET_DNS_PORT
       external: 53
     path: /
+    prefix: '*'
 timeout:
   start: 10
 screenshots: []
+capabilities:
+  dynamicPathPrefix: true
