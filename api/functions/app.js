@@ -50,7 +50,7 @@ if (isProduction) {
   if (isNetlify) {
     app.use(netlifyPrefix, router);
   } else {
-    const staticDir = process.env.BLOCKLET_APP_ID ? './' : '../../';
+    const staticDir = '../../';
 
     app.use(compression());
     app.use(router);
