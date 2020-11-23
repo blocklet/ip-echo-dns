@@ -39,12 +39,8 @@ interfaces:
   - type: web
     name: adminUrl
     path: /
-    prefix: '*'
-    protocol: tcp
-    port: BLOCKLET_PORT
   - type: service
     name: dns
-    prefix: '*'
     protocol: udp
     port:
       internal: BLOCKLET_DNS_PORT
@@ -52,6 +48,4 @@ interfaces:
     path: /
 timeout:
   start: 10
-capabilities:
-  dynamicPathPrefix: true
 screenshots: []
