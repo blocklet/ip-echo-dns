@@ -1,23 +1,23 @@
 name: ip-echo-dns
 title: IP Echo DNS
 description: An IP Echo DNS server
-version: 1.1.0
+version: 1.2.0
 keywords:
   - dapp
   - dns
-files:
-  - build
-  - logo.png
-  - blocklet.md
-  - README.md
 author:
   name: polunzh
   email: polunzh@gmail.com
   url: 'http://github.com/polunzh'
 repository:
   type: git
-  url: https://github.com/blocklet/ip-echo-dns
+  url: 'git+https://github.com/blocklet/ip-echo-dns.git'
 license: Apache-2.0
+files:
+  - build
+  - logo.png
+  - blocklet.md
+  - README.md
 group: dapp
 main: api/index.js
 logo: logo.png
@@ -40,10 +40,18 @@ interfaces:
     name: adminUrl
     path: /
     prefix: '*'
+    protocol: tcp
+    port: BLOCKLET_PORT
   - type: service
     name: dns
     prefix: '*'
-    protocol: 'udp'
+    protocol: udp
     port:
       internal: BLOCKLET_DNS_PORT
       external: 53
+    path: /
+timeout:
+  start: 10
+capabilities:
+  dynamicPathPrefix: true
+screenshots: []
