@@ -2,7 +2,7 @@
   "name": "ip-echo-dns",
   "title": "IP Echo DNS",
   "description": "An IP Echo DNS server",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "homepage": ".",
   "keywords": [
     "dapp",
