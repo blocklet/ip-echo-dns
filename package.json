@@ -3,6 +3,7 @@
   "title": "IP Echo DNS",
   "description": "An IP Echo DNS server",
   "version": "1.4.1",
+  "homepage": ".",
   "keywords": [
     "dapp",
     "dns"
@@ -54,7 +55,7 @@
     "bundle": "yarn clean && npm run bundle:client && rm -f build/**/**/*.map && npm run bundle:server",
     "bundle:client": "REACT_APP_API_PREFIX=\"\" REACT_APP_APP_NAME=\"IP Echo DNS\" yarn build:client",
     "bundle:server": "abtnode bundle --zip --create-release",
-    "deploy": "npm run bundle && abtnode deploy .blocklet/bundle --skip-hooks",
+    "deploy": "npm run bundle && abtnode deploy .blocklet/bundle",
     "test": "react-app-rewired test --env=jsdom --passWithNoTests",
     "eject": "react-app-rewired eject"
   },
