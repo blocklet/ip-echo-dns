@@ -31,6 +31,15 @@ environments:
     required: true
     default: '(\d{1,3})-(\d{1,3})-(\d{1,3})-(\d{1,3})\.ip\.abtnet\.io'
     secure: false
+  - name: EXAMPLE_DOMAIN
+    description: The example domain to be parsed, for healthy check
+    required: false
+    default: '192-168-0-1.ip.abtnet.io'
+    secure: false
+  - name: DNS_SERVICE
+    description: The DNS service, for healthy check
+    required: false
+    secure: false
 scripts:
   dev: npm run start
 specVersion: 1.0.1
