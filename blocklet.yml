@@ -16,6 +16,7 @@ repository:
 license: Apache-2.0
 files:
   - build
+  - screenshots
   - logo.png
   - blocklet.md
   - README.md
@@ -53,5 +54,3 @@ interfaces:
 timeout:
   start: 10
 screenshots: []
-capabilities:
-  dynamicPathPrefix: true
