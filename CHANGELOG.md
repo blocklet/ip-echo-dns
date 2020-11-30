@@ -1,3 +1,8 @@
+## 1.4.3 (November 30, 2020)
+
+- chore: update readme and add screenshot
+- [skip ci] Update README.md
+
 ## 1.4.2 (November 25, 2020)
 
 - fix: admin page should mount on any path
