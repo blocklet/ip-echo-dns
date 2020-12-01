@@ -8,6 +8,7 @@ const serverless = require('serverless-http');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const fallback = require('express-history-api-fallback');
+const serveStatic = require('serve-static');
 
 const sessionRoute = require('../routes/session');
 const healthRoute = require('../routes/health');
@@ -58,9 +59,21 @@ if (isProduction) {
   }
 
   const staticDirNew = path.resolve(__dirname, staticDir, 'build');
-  app.use(express.static(staticDirNew, { maxAge: '365d', index: false }));
+
+  const staticServe = express.static(staticDirNew, {
+    maxAge: '30d',
+    extensions: ['html', 'htm'],
+    index: ['index.html', 'index.htm'],
+    setHeaders: (res, file) => {
+      if (serveStatic.mime.lookup(file) === 'text/html') {
+        res.setHeader('Cache-Control', 'public, max-age=0');
+      }
+    },
+  });
+
+  app.use(staticServe);
   if (process.env.BLOCKLET_DID) {
-    app.use(`/${process.env.BLOCKLET_DID}`, express.static(staticDirNew, { maxAge: '365d', index: false }));
+    app.use(`/${process.env.BLOCKLET_DID}`, staticServe);
   }
   app.use(fallback('index.html', { root: staticDirNew }));
   app.use((req, res) => {
