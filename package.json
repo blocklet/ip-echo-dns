@@ -2,7 +2,7 @@
   "name": "ip-echo-dns",
   "title": "IP Echo DNS",
   "description": "An IP Echo DNS server",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "homepage": ".",
   "keywords": [
     "dapp",
@@ -40,6 +40,7 @@
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2",
     "react-use": "^15.3.4",
+    "serve-static": "^1.14.1",
     "serverless-http": "^2.0.2",
     "styled-components": "^5.0.1"
   },

@@ -6,6 +6,16 @@ const { Packet } = dns;
 
 const ipReg = new RegExp(ipRegexString);
 
+const parseIP = (name = '') => {
+  if (ipReg.test(name)) {
+    const result = ipReg.exec(name);
+
+    return result.slice(1, 5).join('.');
+  }
+
+  return '';
+};
+
 const server = dns.createServer((request, send) => {
   const response = Packet.createResponseFromRequest(request);
   const [question] = request.questions;
@@ -14,14 +24,12 @@ const server = dns.createServer((request, send) => {
   console.log('query name', { name, ipReg });
 
   if (ipReg.test(name)) {
-    const result = ipReg.exec(name);
-
     response.answers.push({
       name,
       type: Packet.TYPE.A,
       class: Packet.CLASS.IN,
       ttl: 604800, // 7 weeks
-      address: result.slice(1, 5).join('.'),
+      address: parseIP(name),
     });
   }
 
@@ -39,4 +47,4 @@ const start = () => {
   });
 };
 
-module.exports = { start };
+module.exports = { start, parseIP, ipReg };

@@ -1,3 +1,9 @@
+## 1.4.4 (December 01, 2020)
+
+- fix review: do not cache html files
+- do not publish to aliyun node
+- feat: add health check api
+
 ## 1.4.3 (November 30, 2020)
 
 - chore: update readme and add screenshot

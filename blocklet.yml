@@ -1,7 +1,7 @@
 name: ip-echo-dns
 title: IP Echo DNS
 description: An IP Echo DNS server
-version: 1.4.3
+version: 1.4.4
 homepage: ''
 keywords:
   - dapp
@@ -33,7 +33,7 @@ environments:
     secure: false
 scripts:
   dev: npm run start
-specVersion: 1.0.1
+specVersion: 1.0.2
 did: z8iZuGaHf4BxN4XxFWhjuX1zP99ySPmZUFNJf
 documentation: ''
 interfaces:
@@ -53,4 +53,5 @@ interfaces:
     prefix: '*'
 timeout:
   start: 10
-screenshots: []
+screenshots:
+  - dig.png
