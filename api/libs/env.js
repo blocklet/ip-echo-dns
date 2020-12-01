@@ -29,6 +29,4 @@ module.exports = {
     process.env.apiPrefix ||
     '',
   ipRegexString: process.env.IP_REGEX,
-  exampleDomain: process.env.EXAMPLE_DOMAIN,
-  dnsService: process.env.DNS_SERVICE,
 };

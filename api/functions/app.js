@@ -9,7 +9,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const fallback = require('express-history-api-fallback');
 
-const { exampleDomain } = require('../libs/env');
 const sessionRoute = require('../routes/session');
 const healthRoute = require('../routes/health');
 
@@ -47,10 +46,7 @@ app.use(
 const router = express.Router();
 
 sessionRoute.init(router);
-
-if (exampleDomain) {
-  healthRoute.init(router);
-}
+healthRoute.init(router);
 
 if (isProduction) {
   const staticDir = '../../';

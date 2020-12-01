@@ -47,4 +47,4 @@ const start = () => {
   });
 };
 
-module.exports = { start, parseIP };
+module.exports = { start, parseIP, ipReg };
