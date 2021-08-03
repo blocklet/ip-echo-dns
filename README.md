@@ -1,4 +1,7 @@
-# Simple Boarding Gate
+# IP ECHO DNS
+
+This project is deprecated, new project repo:
+https://github.com/blocklet/certificates-manager
 
 > A simple DNS server.
 
